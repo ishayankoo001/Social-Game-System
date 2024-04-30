@@ -7,6 +7,14 @@ public class AcquaintanceElement {
         this.number = number;
     }
 
+    @Override
+    public String toString() {
+        return "AcquaintanceElement{" +
+                "player=" + player +
+                ", number=" + number +
+                '}';
+    }
+
     public Player getPlayer() {
         return player;
     }
