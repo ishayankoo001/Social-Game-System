@@ -6,11 +6,20 @@ public class Player {
     private Message messagesToRespond;
     private boolean isActive = true;
     private String name;
+    private ResponseFunction responseFunction;
 
     public Player(String name, Universe universe) {
         this.name = name;
         this.universe = universe;
         universe.addPlayer(this);
+    }
+
+    public ResponseFunction getResponseFunction() {
+        return responseFunction;
+    }
+
+    public void setResponseFunction(ResponseFunction responseFunction) {
+        this.responseFunction = responseFunction;
     }
 
     public Message respond(Message message) {
