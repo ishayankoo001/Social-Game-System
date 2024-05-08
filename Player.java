@@ -4,14 +4,22 @@ public class Player {
     private ResponseFunction responses;
     private Universe universe;
     private Message messagesToRespond;
+    private Message newMessagesInbox;
     private boolean isActive = true;
     private String name;
     private ResponseFunction responseFunction;
-
     public Player(String name, Universe universe) {
         this.name = name;
         this.universe = universe;
         universe.addPlayer(this);
+    }
+
+    public Message getNewMessagesInbox() {
+        return newMessagesInbox;
+    }
+
+    public void setNewMessagesInbox(Message newMessagesInbox) {
+        this.newMessagesInbox = newMessagesInbox;
     }
 
     public ResponseFunction getResponseFunction() {

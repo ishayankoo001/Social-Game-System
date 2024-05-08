@@ -13,7 +13,11 @@ public class GameRound {
         }
     }
     public void Respond(){
-        //tbd
+        for (Player player : players){
+            if (player.isActive()){
+                //tbd
+            }
+        }
     }
 
 }
