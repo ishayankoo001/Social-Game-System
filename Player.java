@@ -21,6 +21,17 @@ public class Player {
     public void setNewMessagesInbox(Message newMessagesInbox) {
         this.newMessagesInbox = newMessagesInbox;
     }
+    public void respondToMessages(){
+         Message msg = getMessagesToRespond();
+         ResponseFunction replyHashmap = getResponseFunction();
+         Message response = replyHashmap.getResponse(msg);
+    }
+    public boolean checkDeath(){
+        if (responses.getResponse(messagesToRespond) == null) {
+            return true;
+        }
+        return false;
+    }
 
     public ResponseFunction getResponseFunction() {
         return responseFunction;

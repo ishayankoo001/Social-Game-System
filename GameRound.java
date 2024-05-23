@@ -3,19 +3,16 @@ public class GameRound {
 
     public void calculateDeadPlayers() {
         for (Player player : players) {
-            if (player.isActive()) {
-                Message msg = player.getMessagesToRespond();
-                ResponseFunction replyHashmap = player.getResponseFunction();
-                if (replyHashmap.getResponse(msg) == null) {
-                    player.setIsActive(false);
-                }
+            if (player.isActive() && player.checkDeath()) {
+                player.setIsActive(false);
             }
         }
     }
-    public void Respond(){
-        for (Player player : players){
-            if (player.isActive()){
-                //tbd
+
+    public void Respond() {
+        for (Player player : players) {
+            if (player.isActive()) {
+               Message response = player.getResponseFunction().getResponse(player.getMessagesToRespond());
             }
         }
     }
