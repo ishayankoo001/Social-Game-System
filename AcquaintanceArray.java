@@ -1,6 +1,10 @@
 import java.util.Arrays;
 
 public class AcquaintanceArray {
+    public AcquaintanceElement[] getAcquaintanceElements() {
+        return acquaintanceElements;
+    }
+
     private AcquaintanceElement[] acquaintanceElements;
     public static AcquaintanceArray createAcquaintanceArray(String input, Universe universe) {
         //asume input is in form of "{(name1, number1), (name2, number2), ...}"
@@ -18,6 +22,14 @@ public class AcquaintanceArray {
         AcquaintanceArray acquaintanceArray = new AcquaintanceArray();
         acquaintanceArray.acquaintanceElements = acquaintanceElements;
         return acquaintanceArray;
+    }
+    public int findPlayerInAcquaintances(Player player) {
+        for (int i = 0; i < acquaintanceElements.length; i++) {
+            if (acquaintanceElements[i].getPlayer().equals(player)) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     @Override

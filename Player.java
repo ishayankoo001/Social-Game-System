@@ -45,8 +45,23 @@ public class Player {
         return responses.getResponse(message);
     }
 
+    public void respondToAllAcquiantances(Message calculatedResponses){
+        for (int i = 0; i < getAcquaintances().getAcquaintanceElements().length ; i++) {
+            AcquaintanceElement acq = getAcquaintances().getAcquaintanceElements()[i];
+            Player player = acq.getPlayer();
+            int playerIndex = acq.getNumber();
+            player.receiveMessage(calculatedResponses.getNumbers()[i], playerIndex);
+        }
+    }
+
     public String getName() {
         return name;
+    }
+
+    public void receiveMessage(int message, int index){
+        int[] new_temp = newMessagesInbox.getNumbers();
+        new_temp[index] = message;
+        newMessagesInbox.setNumbers(new_temp);
     }
 
     public AcquaintanceArray getAcquaintances() {

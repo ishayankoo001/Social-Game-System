@@ -13,6 +13,8 @@ public class GameRound {
         for (Player player : players) {
             if (player.isActive()) {
                Message response = player.getResponseFunction().getResponse(player.getMessagesToRespond());
+               AcquaintanceArray acquiantances = player.getAcquaintances();
+
             }
         }
     }
