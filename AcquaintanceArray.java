@@ -35,7 +35,7 @@ public class AcquaintanceArray {
     @Override
     public String toString() {
         return "AcquaintanceArray{" +
-                "acquaintanceElements=" + Arrays.toString(acquaintanceElements) +
+                Arrays.toString(acquaintanceElements) +
                 '}';
     }
 }

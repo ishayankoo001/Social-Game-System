@@ -1,6 +1,10 @@
 public class GameRound {
     public Player[] players;
 
+    public GameRound(Player[] players) {
+        this.players = players;
+    }
+
     public void calculateDeadPlayers() {
         for (Player player : players) {
             if (player.isActive() && player.checkDeath()) {

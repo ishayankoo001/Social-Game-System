@@ -1,7 +1,6 @@
 public class Player {
 
     private AcquaintanceArray acquaintances;
-    private ResponseFunction responses;
     private Universe universe;
     private Message messagesToRespond;
     private Message newMessagesInbox;
@@ -27,7 +26,8 @@ public class Player {
          Message response = replyHashmap.getResponse(msg);
     }
     public boolean checkDeath(){
-        if (responses.getResponse(messagesToRespond) == null) {
+        System.out.println(responseFunction.getResponse(messagesToRespond));
+        if (responseFunction.getResponse(messagesToRespond) == null) {
             return true;
         }
         return false;
@@ -42,7 +42,7 @@ public class Player {
     }
 
     public Message respond(Message message) {
-        return responses.getResponse(message);
+        return responseFunction.getResponse(message);
     }
 
     public void respondToAllAcquiantances(Message calculatedResponses){
@@ -78,7 +78,7 @@ public class Player {
 
     @Override
     public String toString() {
-        return "Player{" + "name='" + name + '\'' + '}';
+        return name;
     }
 
     public void setIsActive(boolean isActive) {

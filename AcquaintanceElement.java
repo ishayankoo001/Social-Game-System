@@ -9,7 +9,7 @@ public class AcquaintanceElement {
 
     @Override
     public String toString() {
-        return "AcquaintanceElement{" +
+        return "{" +
                 "player=" + player +
                 ", number=" + number +
                 '}';
