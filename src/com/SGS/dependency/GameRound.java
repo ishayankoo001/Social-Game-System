@@ -1,3 +1,5 @@
+package com.SGS.dependency;
+
 public class GameRound {
     public Player[] players;
 

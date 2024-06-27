@@ -1,3 +1,5 @@
+package com.SGS.dependency;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -38,7 +40,5 @@ public class Main {
         for (Player player : players) {
             System.out.println(player.isActive());
         }
-
-
     }
 }

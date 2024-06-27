@@ -1,3 +1,5 @@
+package com.SGS.dependency;
+
 public class Universe {
     private Player[] players;
     private int k;

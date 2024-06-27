@@ -1,3 +1,5 @@
+package com.SGS.dependency;
+
 public class AcquaintanceElement {
     private Player player;
     private int number;

@@ -1,3 +1,5 @@
+package com.SGS.dependency;
+
 public class Player {
 
     private AcquaintanceArray acquaintances;

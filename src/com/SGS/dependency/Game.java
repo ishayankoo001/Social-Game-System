@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+package com.SGS.dependency;
 
 public class Game {
     public GameRound currentRound;

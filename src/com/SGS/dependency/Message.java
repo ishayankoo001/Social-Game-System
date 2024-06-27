@@ -1,3 +1,5 @@
+package com.SGS.dependency;
+
 import java.util.Arrays;
 
 public class Message {
