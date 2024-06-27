@@ -2,7 +2,7 @@ package com.SGS.dependency;
 
 import java.util.HashMap;
 
-public class ResponseFunction {
+public class ResponseFunction implements IResponseFunction{
     public HashMap<Message, Message> getResponses() {
         return responses;
     }

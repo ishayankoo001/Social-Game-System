@@ -8,7 +8,7 @@ public class Player {
     private Message newMessagesInbox;
     private boolean isActive = true;
     private String name;
-    private ResponseFunction responseFunction;
+    private IResponseFunction responseFunction;
     public Player(String name, Universe universe) {
         this.name = name;
         this.universe = universe;
@@ -24,7 +24,7 @@ public class Player {
     }
     public void respondToMessages(){
          Message msg = getMessagesToRespond();
-         ResponseFunction replyHashmap = getResponseFunction();
+         IResponseFunction replyHashmap = getResponseFunction();
          Message response = replyHashmap.getResponse(msg);
     }
     public boolean checkDeath(){
@@ -35,7 +35,7 @@ public class Player {
         return false;
     }
 
-    public ResponseFunction getResponseFunction() {
+    public IResponseFunction getResponseFunction() {
         return responseFunction;
     }
 
