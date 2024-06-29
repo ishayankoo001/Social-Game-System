@@ -1,23 +1,23 @@
 package com.SGS.dependency;
 
 public class GameRound {
-    public Player[] players;
+    public IPlayer[] players;
 
     public GameRound(Player[] players) {
         this.players = players;
     }
 
     public void calculateDeadPlayers() {
-        for (Player player : players) {
-            if (player.isActive() && player.checkDeath()) {
+        for (IPlayer player : players) {
+            if (player.isActive && player.checkDeath()) {
                 player.setIsActive(false);
             }
         }
     }
 
     public void Respond() {
-        for (Player player : players) {
-            if (player.isActive()) {
+        for (IPlayer player : players) {
+            if (player.isActive) {
                Message response = player.getResponseFunction().getResponse(player.getMessagesToRespond());
                player.respondToAllAcquiantances(response);
             }
