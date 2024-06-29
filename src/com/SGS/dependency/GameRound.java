@@ -1,9 +1,9 @@
 package com.SGS.dependency;
 
-public class GameRound {
+public class GameRound implements IGameRound {
     public IPlayer[] players;
 
-    public GameRound(Player[] players) {
+    public GameRound(IPlayer[] players) {
         this.players = players;
     }
 
