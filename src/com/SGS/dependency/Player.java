@@ -8,6 +8,9 @@ public class Player implements IPlayer {
     public Message getMessagesToRespond() {
         return messagesToRespond;
     }
+    public Boolean isActive() {
+        return isActive;
+    }
 
     public void setMessagesToRespond(Message messagesToRespond) {
         this.messagesToRespond = messagesToRespond;

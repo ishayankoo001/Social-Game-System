@@ -1,8 +1,10 @@
 package com.SGS.dependency;
 
+
 public interface IPlayer {
     Message getNewMessagesInbox();
     boolean isActive = true;
+
 
 
     void setNewMessagesInbox(Message newMessagesInbox);
