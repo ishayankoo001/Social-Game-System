@@ -7,6 +7,10 @@ public class AcquaintanceArray {
         return acquaintanceElements;
     }
 
+    public void setAcquaintanceElements(AcquaintanceElement[] acquaintanceElements) {
+        this.acquaintanceElements = acquaintanceElements;
+    }
+
     private AcquaintanceElement[] acquaintanceElements;
     public static AcquaintanceArray createAcquaintanceArray(String input, Universe universe) {
         //asume input is in form of "{(name1, number1), (name2, number2), ...}"

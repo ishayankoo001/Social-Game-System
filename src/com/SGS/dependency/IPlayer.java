@@ -15,7 +15,7 @@ public interface IPlayer {
 
     IResponseFunction getResponseFunction();
 
-    void setResponseFunction(ResponseFunction responseFunction);
+    void setResponseFunction(IResponseFunction responseFunction);
 
     Message respond(Message message);
 

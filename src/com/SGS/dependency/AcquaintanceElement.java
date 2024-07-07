@@ -12,7 +12,7 @@ public class AcquaintanceElement {
     @Override
     public String toString() {
         return "{" +
-                "player=" + player +
+                "player=" + player + player.isActive() +
                 ", number=" + number +
                 '}';
     }

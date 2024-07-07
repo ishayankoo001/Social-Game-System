@@ -25,6 +25,8 @@ public class Player implements IPlayer {
         this.name = name;
         this.universe = universe;
         universe.addPlayer(this);
+        newMessagesInbox = new Message(new int[universe.getK()]);
+        this.acquaintances = new AcquaintanceArray();
     }
 
     @Override
@@ -41,10 +43,15 @@ public class Player implements IPlayer {
          Message msg = getMessagesToRespond();
          IResponseFunction replyHashmap = getResponseFunction();
          Message response = replyHashmap.getResponse(msg);
+         for (int i = 0; i < getAcquaintances().getAcquaintanceElements().length ; i++) {
+             AcquaintanceElement acq = getAcquaintances().getAcquaintanceElements()[i];
+             Player player = acq.getPlayer();
+             int playerIndex = acq.getNumber();
+             player.receiveMessage(response.getNumbers()[i], playerIndex);
+         }
     }
     @Override
     public boolean checkDeath(){
-        System.out.println(responseFunction.getResponse(messagesToRespond));
         if (responseFunction.getResponse(messagesToRespond) == null) {
             return true;
         }
@@ -57,7 +64,7 @@ public class Player implements IPlayer {
     }
 
     @Override
-    public void setResponseFunction(ResponseFunction responseFunction) {
+    public void setResponseFunction(IResponseFunction responseFunction) {
         this.responseFunction = responseFunction;
     }
 
@@ -70,6 +77,9 @@ public class Player implements IPlayer {
     public void respondToAllAcquiantances(Message calculatedResponses){
         for (int i = 0; i < getAcquaintances().getAcquaintanceElements().length ; i++) {
             AcquaintanceElement acq = getAcquaintances().getAcquaintanceElements()[i];
+            if (acq == null) {
+                continue;
+            }
             Player player = acq.getPlayer();
             int playerIndex = acq.getNumber();
             player.receiveMessage(calculatedResponses.getNumbers()[i], playerIndex);

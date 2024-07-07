@@ -2,6 +2,11 @@ package com.SGS.dependency;
 
 public class Universe {
     private Player[] players;
+
+    public int getK() {
+        return k;
+    }
+
     private int k;
 
     public Universe(Player[] players, int k) {
